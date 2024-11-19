@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        #map-container {
+            height: 80vh;
+        }
+        .carousel-item img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="w-full">
+        <div class="bg-purple-900 py-2 px-4 md:px-8">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-white text-sm">
+                <div class="flex items-center space-x-4 mb-2 md:mb-0">
+                    <a href="tel:+1234567890" class="flex items-center hover:text-purple-200 transition-colors duration-300" aria-label="Call us">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                        </svg>
+                        +1 234 567 890
+                    </a>
+                    <a href="mailto:info@company.com" class="flex items-center hover:text-purple-200 transition-colors duration-300" aria-label="Email us">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        eva@org.com.co
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-yellow-50 shadow-md py-4 px-4 md:px-8">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?fit=crop&w=50&h=50" alt="Company Logo" class="w-10 h-10 rounded-full object-cover">
+                    <span class="ml-3 text-xl font-semibold text-purple-900">EVA</span>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="#" class="text-purple-900 hover:text-purple-700 font-medium transition-colors duration-300 relative group">
+                        INICIO
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="text-purple-900 hover:text-purple-700 font-medium transition-colors duration-300 relative group">
+                        NOSOTROS
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="text-purple-900 hover:text-purple-700 font-medium transition-colors duration-300 relative group">
+                        NECESITO AYUDA
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="bg-purple-900 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition-colors duration-300 shadow-md hover:shadow-lg">
+                        FRANJAS SEGURAS
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="flex flex-col md:flex-row h-100vh">
+        <div id="map" class="w-full md:w-2/3 h-[400px] md:h-full bg-gray-200">
+            {{ map|safe }}
+        </div>
+        
+        <div class="w-full md:w-1/3 bg-yellow-50 p-6 ">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-6">Leyenda del Mapa</h2>
+            
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-purple-100 transition">
+                    <span class="text-3xl text-purple-700"><i class="fas fa-home"></i></span>
+                    <div>
+                        <h3 class="font-medium text-purple-800">Refugio</h3>
+                        <p class="text-gray-600">Alojamiento temporal para mujeres victimas de maltrato</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-purple-100 transition">
+                    <span class="text-3xl text-orange-500"><i class="fas fa-house-medical"></i></span>
+                    <div>
+                        <h3 class="font-medium text-purple-800">Lugar Seguro</h3>
+                        <p class="text-gray-600">Espacio seguro para asistencia inmediata</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-purple-100 transition">
+                    <span class="text-3xl text-blue-500"><i class="fas fa-female"></i></span>
+                    <div>
+                        <h3 class="font-medium text-purple-800">Tu Ubicación</h3>
+                        <p class="text-gray-600">Tu posición actual en el mapa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="bg-gradient-to-br from-purple-800 via-purple-600 to-pink-500 text-white py-8">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Nuestra Misión</h2>
+            <p class="text-gray-100 text-lg mb-8">
+                Trabajamos para conectar a las personas con espacios seguros que brinden apoyo, protección y recursos para mujeres en situaciones vulnerables. A través de nuestro mapa interactivo, puedes descubrir refugios y lugares seguros cercanos, cada uno diseñado para ofrecer ayuda inmediata y soluciones a largo plazo.
+            </p>
+    
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Refugios -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Refugios</h3>
+                    <p class="text-gray-100 mb-4">
+                        Los refugios proporcionan alojamiento temporal, apoyo psicológico, asesoramiento legal y recursos esenciales para mujeres que enfrentan situaciones de violencia o vulnerabilidad.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300x200?text=Refugios" alt="Refugios" class="rounded-lg shadow-lg">
+                </div>
+    
+                <!-- Lugares Seguros -->
+                <div>
+                    <img src="https://via.placeholder.com/300x200?text=Lugares+Seguros" alt="Lugares Seguros" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Lugares Seguros</h3>
+                    <p class="text-gray-100 mb-4">
+                        Espacios designados donde puedes recibir ayuda inmediata, orientación y acceso a servicios de apoyo comunitario. Estos lugares están diseñados para ofrecer tranquilidad y soporte en momentos críticos.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Scripts necesarios -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

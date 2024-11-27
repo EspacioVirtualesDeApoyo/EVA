@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'interactive_map'
+    'interactive_map',
+    'blog',
+    'community',
+    'meet',
+    'usuario'
 ]
 
 MIDDLEWARE = [
@@ -107,7 +111,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
+USE_TZ = True
 
 USE_I18N = True
 

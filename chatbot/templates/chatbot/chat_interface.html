@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA</title>
+    {% load static %}
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="{% static 'chatbot/css/chat_styles.css' %}">
+</head>
+
+<body>
+    <!--  -->
+    <!-- Ícono flotante -->
+    <button id="chat-icon">💬</button>
+
+    <!-- Contenedor del chat -->
+    <div id="chat-container" style="display:none;">
+        <div id="chat-header">Chatbot</div>
+        <div id="messages">
+            <!-- Mensaje inicial del chatbot -->
+            <div class="bot-message">
+                ¡Hola! Soy EVA, tu asistente virtual. ¿En qué puedo ayudarte hoy?
+            </div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Mostrar y ocultar el chat
+        const chatIcon = document.getElementById('chat-icon');
+        const chatContainer = document.getElementById('chat-container');
+
+        chatIcon.addEventListener('click', function() {
+            if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+                chatContainer.style.display = 'block';
+            } else {
+                chatContainer.style.display = 'none';
+            }
+        });
+
+        // Manejar el envío de mensajes
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const messagesDiv = document.getElementById('messages');
+
+        chatForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userMessage = userInput.value;
+
+            if (userMessage) {
+                // Mostrar el mensaje del usuario en el chat
+                const userMessageElement = document.createElement('div');
+                userMessageElement.classList.add('user-message');
+                userMessageElement.textContent = userMessage;
+                messagesDiv.appendChild(userMessageElement);
+
+                // Limpiar el campo de texto
+                userInput.value = '';
+
+                // Enviar el mensaje al servidor para obtener la respuesta
+                fetch('/chatbot/get-response/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: 'message=' + encodeURIComponent(userMessage)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Mostrar la respuesta del bot
+                    const botMessageElement = document.createElement('div');
+                    botMessageElement.classList.add('bot-message');
+                    botMessageElement.textContent = data.response;
+                    messagesDiv.appendChild(botMessageElement);
+
+                    // Desplazar hacia abajo
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Error al obtener la respuesta:', error);
+
+                    // Mensaje de error
+                    const errorMessageElement = document.createElement('div');
+                    errorMessageElement.classList.add('bot-message');
+                    errorMessageElement.textContent = "Lo siento, hubo un problema al procesar tu mensaje.";
+                    messagesDiv.appendChild(errorMessageElement);
+
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css?ver=10.0" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-purple-700 shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="./index.html">
+                    <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                </a>
+                <span class="text-white text-2xl font-bold">Contáctanos</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="./index.html" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
+                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas frecuentes</a>
+                <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
+                <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="bg-rose-600 text-white p-4 rounded-lg shadow-lg mb-8 transform hover:scale-105 transition-transform">
+        <a href="https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public"
+            class="block text-center font-bold" target="_blank">Ayúdanos para hacer grande este proyecto: en el
+            formulario selecciona
+            E.V.A. para apoyarnos y así hacer crecer nuestro movimiento para poner fin a la violencia contra las
+            mujeres!</a>
+    </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-4xl font-bold text-purple-800 mb-6">Contáctanos</h1>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 leading-relaxed mb-5 text-justify">E.V.A. (Espacios Virtuales de Apoyo) <br>
+                        <a href="mailto:espaciosdeapoyovirtuales@gmail.com">espaciosdeapoyovirtuales@gmail.com</a>
+
+                    </p>
+
+                </div>
+
+                <div>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify font-size">
+                        <a href="tel:"></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button onclick="document.getElementById('chatModal').classList.remove('hidden')"
+        class="fixed bottom-6 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition">
+        <i class="fas fa-comments text-2xl"></i>
+    </button>
+
+    <div id="chatModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800">EVA</h3>
+                <button onclick="document.getElementById('chatModal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <p class="text-gray-600">¿Necesitas alguien con quien hablar? EVA está aquí para ayudarte.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="chat-messages space-y-4 h-64 overflow-y-auto"></div>
+                <div class="mt-4 flex gap-2">
+                    <input type="text" placeholder="Escribe tu mensaje..."
+                        class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                    <button
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

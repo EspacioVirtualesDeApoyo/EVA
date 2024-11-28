@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-purple-700 shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="{% url "inicio" %}">
+                    <img src="{% static 'img/Logo-EVA.jpg' %}" alt="Logo" class="h-12 w-12 rounded-full">
+                </a>
+                <span class="text-white text-2xl font-bold">E.V.A.</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="{% url "inicio" %}" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
+                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas
+                    frecuentes</a>
+                <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
+                <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="bg-rose-600 text-white p-4 rounded-lg shadow-lg mb-8 transform hover:scale-105 transition-transform">
+        <a href="https://sensibilizacion.ciberpaz.gov.co/#/data-ciberpaz/response/64?type=public"
+            class="block text-center font-bold" target="_blank">Ayúdanos para hacer grande este proyecto: en el
+            formulario selecciona
+            E.V.A. para apoyarnos y así hacer crecer nuestro movimiento para poner fin a la violencia contra las
+            mujeres!</a>
+    </div>
+
+
+    <div class="max-w-6xl mx-auto p-4">
+        <div class="relative overflow-hidden rounded-xl shadow-2xl bg-white">
+            <div class="flex transition-transform duration-500 ease-in-out" id="slider">
+                <!-- Slide 1 -->
+                <div class="min-w-full p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start mb-4">
+                            <div class="bg-red-600 text-white rounded-full p-6 shadow-lg flex items-center gap-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4" />
+                                </svg>
+                                <h2 class="text-4xl font-extrabold">STOP</h2>
+                            </div>
+                        </div>
+                        <h2 class="text-3xl font-bold text-red-600 mb-4">¡Alto a la Violencia Contra la Mujer!</h2>
+                        <p class="text-gray-700 text-lg mb-6">Cada mujer merece vivir libre de miedo. Alza tu voz y di
+                            basta
+                            a la violencia de género.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="min-w-full p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <img src="https://images.unsplash.com/photo-1485182708500-e8f1f318ba72" alt="Empowerment"
+                        class="w-full md:w-1/2 rounded-lg object-cover h-[400px]">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-purple-600 mb-4">ROMPE EL SILENCIO</h2>
+                        <p class="text-gray-700 text-lg mb-6">Tu voz es poderosa. Hablar es el primer paso para poner
+                            fin a
+                            la violencia.</p>
+                        <button
+                            class="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition">Más
+                            Información</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="min-w-full p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <img src="https://images.unsplash.com/photo-1507583088163-bed4fe097465" alt="Support"
+                        class="w-full md:w-1/2 rounded-lg object-cover h-[400px]">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-blue-600 mb-4">APOYA A LAS SUPERVIVIENTES</h2>
+                        <p class="text-gray-700 text-lg mb-6">Juntos podemos construir un mundo donde cada mujer se
+                            sienta
+                            segura y apoyada.</p>
+                        <button
+                            class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">Apoyar
+                            Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de navegación -->
+            <button aria-label="Previous slide"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white transition"
+                onclick="prevSlide()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button aria-label="Next slide"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white transition"
+                onclick="nextSlide()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <button aria-label="Go to slide 1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition"
+                    onclick="goToSlide(0)"></button>
+                <button aria-label="Go to slide 2" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition"
+                    onclick="goToSlide(1)"></button>
+                <button aria-label="Go to slide 3" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition"
+                    onclick="goToSlide(2)"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const slides = 3;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides) % slides;
+            updateSlider();
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateSlider();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.rounded-full');
+            dots.forEach((dot, index) => {
+                if (index > 2) return;
+                dot.classList.toggle('bg-gray-600', index === currentSlide);
+                dot.classList.toggle('bg-gray-300', index !== currentSlide);
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        setInterval(nextSlide, 5000);
+        updateDots();
+    </script>
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-4xl font-bold text-purple-800 mb-6">Espacios Virtuales de Apoyo</h1>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify">Toda mujer tiene derecho a vivir libre de
+                        violencia. Juntos podemos marcar la diferencia y crear un mundo más seguro para todas las
+                        mujeres.
+                        <br>La violencia contra mujeres y niñas es una problemática global que impacta profundamente su
+                        bienestar físico, emocional y social, dejando cicatrices visibles e invisibles que afectan su
+                        calidad de vida y sus oportunidades de desarrollo. Aunque existen iniciativas para abordar esta
+                        problemática, muchas mujeres aún enfrentan barreras significativas para acceder a la
+                        información, el apoyo inmediato y los espacios seguros que necesitan.
+                    </p>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h2 class="text-xl font-semibold text-purple-800 mb-2">Problemáticas principales</h2>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>1 de cada 3 mujeres sufre violencia física o sexual</li>
+                            <li>Menos del 40% de las mujeres buscan ayuda después de sufrir violencia</li>
+                            <li>137 mujeres son asesinadas por familiares cada día en todo el mundo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <img src="./imgs/unete.png" width="500px" height="400px">
+                </div>
+            </div>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <a href="./reuniones.html">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="./imgs/reuniones.jpg" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-purple-600 mb-2">Reuniones sincrónicas anónimas</h3>
+                    <p class="text-gray-700">Únete a nustras reuniones sincónicas para tener un mejor conocimiento sobre
+                        que hacer en un caso de violencia.</p>
+                </div>
+            </a>
+            <a href="./educacion.html">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="./imgs/educacion.png" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-purple-600 mb-2">Educación</h3>
+                    <p class="text-gray-700">Una sección para aprender sobre tipos de violencia, derechos y recursos
+                        disponibles.
+                        <br><br>
+                    </p>
+                </div>
+            </a>
+            <a href="./sobre-la-app.html">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="./imgs/movil.jpg" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-purple-600 mb-2">Recurso móvil</h3>
+                    <p class="text-gray-700">Envía la ubicación de la persona a contactos de confianza.</p><br>
+                </div>
+            </a>
+        </div>
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-4xl font-bold text-purple-800 mb-6">Testimonios</h1>
+            <div>
+                <p class="text-gray-700 leading-relaxed mb-4 text-justify">En este espacio, las voces de mujeres
+                    valientes toman protagonismo. Sus testimonios reflejan no solo las adversidades enfrentadas, sino
+                    también la fuerza, la resiliencia y el poder de transformación que han encontrado en su camino. Al
+                    compartir sus experiencias, inspiran a otras mujeres y contribuyen a la concienciación sobre la
+                    importancia de erradicar la violencia de género. Juntos, construimos un mundo más justo y seguro
+                    para todas. </p>
+                <a href="./testimonios.html"
+                    class="relative bg-purple-800 text-white font-bold py-2 px-4 rounded inline-block group hover:bg-purple-700 transition-all duration-300 ease-in-out hover:pl-6 hover:pr-10">
+                    Ver más
+                    <span
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:right-4 transition-all duration-300 ease-in-out">
+                        &rarr;
+                    </span>
+                </a>
+            </div>
+
+
+        </section>
+        <br>
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-4xl font-bold text-purple-800 mb-6">Habla con más mujeres valientes</h1>
+            <div>
+                <p class="text-gray-700 leading-relaxed mb-4 text-justify">Este es un lugar seguro donde las mujeres
+                    pueden conectarse, compartir sus experiencias, apoyar a otras y encontrar respuestas. Aquí, cada voz
+                    importa y cada historia tiene un propósito: construir una comunidad de solidaridad, comprensión y
+                    empoderamiento. Juntas, podemos superar obstáculos, generar cambios y crecer en un entorno donde la
+                    empatía y el respeto son nuestra guía. Únete a esta comunidad y sé parte de una red que transforma
+                    vidas y fomenta la sororidad.</p>
+                <a href="./comunidad.html"
+                    class="relative bg-purple-800 text-white font-bold py-2 px-4 rounded inline-block group hover:bg-purple-700 transition-all duration-300 ease-in-out hover:pl-6 hover:pr-10">
+                    Ver más
+                    <span
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:right-4 transition-all duration-300 ease-in-out">
+                        &rarr;
+                    </span>
+                </a>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <button onclick="document.getElementById('chatModal').classList.remove('hidden')"
+        class="fixed bottom-6 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition">
+        <i class="fas fa-comments text-2xl"></i>
+    </button>
+
+    <div id="chatModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800">EVA</h3>
+                <button onclick="document.getElementById('chatModal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <p class="text-gray-600">¿Necesitas alguien con quien hablar? EVA está aquí para ayudarte.</p>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="chat-messages space-y-4 h-64 overflow-y-auto"></div>
+                <div class="mt-4 flex gap-2">
+                    <input type="text" placeholder="Escribe tu mensaje..."
+                        class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                    <button
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

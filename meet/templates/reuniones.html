@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-pink-50">
+    <header class="bg-purple-700 shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="./index.html">
+                    <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                </a>
+                <span class="text-white text-2xl font-bold">Reuniones Sincrónicas</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="./index.html" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
+                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas
+                    frecuentes</a>
+                <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
+                <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <h1 class="text-3xl font-bold text-pink-800">Calendario de reuniones sincrónicas</h1>
+                    <div class="flex space-x-4">
+                        <button
+                            class="px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 transition-colors">Día</button>
+                        <button
+                            class="px-4 py-2 bg-pink-100 text-pink-800 rounded hover:bg-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 transition-colors">Semana</button>
+                        <button
+                            class="px-4 py-2 bg-pink-100 text-pink-800 rounded hover:bg-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 transition-colors">Mes</button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-xl font-semibold text-gray-800">Noviembre 2024</h2>
+                    <div class="flex space-x-2">
+                        <button class="p-2 hover:bg-pink-100 rounded-full transition-colors">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button class="p-2 hover:bg-pink-100 rounded-full transition-colors">
+                            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-7 gap-4 mb-4">
+                    <div class="text-center font-medium text-gray-600">Domingo</div>
+                    <div class="text-center font-medium text-gray-600">Lunes</div>
+                    <div class="text-center font-medium text-gray-600">Martes</div>
+                    <div class="text-center font-medium text-gray-600">Miércoles</div>
+                    <div class="text-center font-medium text-gray-600">Jueves</div>
+                    <div class="text-center font-medium text-gray-600">Viernes</div>
+                    <div class="text-center font-medium text-gray-600">Sábado</div>
+                </div>
+                <div class="grid grid-cols-7 gap-4">
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span class="text-gray-400">25</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span class="text-gray-400">26</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span class="text-gray-400">27</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span class="text-gray-400">28</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span class="text-gray-400">29</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer relative">
+                        <span>1</span>
+                        <div class="mt-1 p-1 text-xs bg-pink-100 text-pink-800 rounded">Red de voces valientes</div>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>2</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>3</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>4</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>5</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>6</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer">
+                        <span>7</span>
+                    </div>
+                    <div
+                        class="min-h-[100px] p-2 border border-gray-200 rounded hover:border-pink-300 transition-colors cursor-pointer relative">
+                        <span>8</span>
+                        <div class="mt-1 p-1 text-xs bg-purple-100 text-purple-800 rounded">Red de voces valientes: segunda sesión
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.V.A. - Espacios Virtuales de Apoyo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-pink-50">
+    <header class="bg-purple-700 shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="./index.html">
+                    <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                </a>
+                <span class="text-white text-2xl font-bold">Nosotros</span>
+            </div>
+            <!-- Botón para el menú móvil -->
+            <button id="menuButton" class="md:hidden text-white" aria-label="Menú">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="./index.html" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
+                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas frecuentes</a>
+                <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
+                <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>
+            </nav>
+        </div>
+        <!-- Menú móvil -->
+        <nav id="mobileMenu" class="hidden bg-purple-700 md:hidden">
+            <a href="./index.html" class="block text-white py-2 px-4 hover:bg-purple-600">Inicio</a>
+            <a href="./mapa.html" class="block text-white py-2 px-4 hover:bg-purple-600">Mapa</a>
+            <a href="./preguntas-frecuentes.html" class="block text-white py-2 px-4 hover:bg-purple-600">Preguntas frecuentes</a>
+            <a href="./nosotros.html" class="block text-white py-2 px-4 hover:bg-purple-600">Nosotros</a>
+            <a href="./contacto.html" class="block text-white py-2 px-4 hover:bg-purple-600">Contacto</a>
+        </nav>
+    </header>
+
+    <script>
+        // Funcionalidad para mostrar/ocultar el menú móvil
+        document.getElementById('menuButton').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-purple-800 mb-4">Nuestro Compromiso Contra la Violencia</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Juntas, estamos unidas en nuestra misión de crear un
+                mundo libre de violencia contra las mujeres.</p>
+        </div>
+
+        <!-- Misión y Visión -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-2xl font-bold text-purple-700 mb-4">Nuestra Misión</h2>
+                <p class="text-gray-700">En E.V.A. trabajamos para construir un entorno digital seguro y accesible que
+                    brinde herramientas innovadoras a mujeres y niñas en situaciones de violencia. Nuestro compromiso
+                    es ser un puente hacia la esperanza, ofreciendo información, apoyo emocional y recursos tecnológicos
+                    para empoderarlas y superar las adversidades.</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                <h2 class="text-2xl font-bold text-purple-700 mb-4">Nuestra Visión</h2>
+                <p class="text-gray-700">Ser reconocidos como el principal referente digital de apoyo a mujeres y
+                    niñas en situaciones de violencia, transformando vidas a través de la tecnología y promoviendo una
+                    sociedad más segura, equitativa y consciente.</p>
+            </div>
+        </div>
+
+        <!-- Características Principales -->
+        <div class="bg-white rounded-lg shadow-xl p-8 mb-16">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6">Características Principales</h2>
+            <ul class="list-disc pl-8 space-y-4 text-gray-700">
+                <li>Chatbot con IA: Responde dudas comunes y redirige a especialistas en casos complejos.</li>
+                <li>Mapa interactivo: Identifica espacios seguros certificados en tiempo real.</li>
+                <li>Reuniones anónimas: Cronogramas de sesiones virtuales y presenciales para apoyo emocional.</li>
+                <li>Versión móvil con botón de pánico: Envía la ubicación de la persona a contactos de confianza.</li>
+            </ul>
+        </div>
+
+        <!-- Sobre el Proyecto -->
+        <div class="bg-white rounded-lg shadow-xl p-8 mb-16">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6">Sobre E.V.A.</h2>
+            <p class="text-gray-700 mb-4">Proporcionamos una plataforma digital inclusiva que empodera a mujeres y
+                niñas en situaciones de violencia, ofreciéndoles información, apoyo inmediato y acceso a redes de
+                ayuda seguras. Usamos herramientas tecnológicas éticas y confiables para sensibilizar, educar y
+                acompañar, garantizando la privacidad y la dignidad de cada usuaria.</p>
+            <div class="bg-purple-50 p-4 rounded-lg">
+                <h3 class="text-xl font-semibold text-purple-700 mb-2">Impacto hasta la fecha</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>10,000+ Mujeres Apoyadas</li>
+                    <li>500+ Programas Comunitarios</li>
+                    <li>50+ Organizaciones Aliadas</li>
+                    <li>25 Ciudades Alcanzadas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-purple-800 mb-8">
+                Nuestros valores fundamentales</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-purple-100 p-6 rounded-lg text-center">
+                    <div class="text-purple-600 text-4xl mb-2">❤️</div>
+                    <h3 class="text-xl font-semibold text-purple-700">Empatia</h3>
+                </div>
+                <div class="bg-purple-100 p-6 rounded-lg text-center">
+                    <div class="text-purple-600 text-4xl mb-2">✊</div>
+                    <h3 class="text-xl font-semibold text-purple-700">Empoderamiento</h3>
+                </div>
+                <div class="bg-purple-100 p-6 rounded-lg text-center">
+                    <div class="text-purple-600 text-4xl mb-2">📢</div>
+                    <h3 class="text-xl font-semibold text-purple-700">Defensa</h3>
+                </div>
+                <div class="bg-purple-100 p-6 rounded-lg text-center">
+                    <div class="text-purple-600 text-4xl mb-2">🤝</div>
+                    <h3 class="text-xl font-semibold text-purple-700">Soporte</h3>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+</html>

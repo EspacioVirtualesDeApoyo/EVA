@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA - Preguntas Frecuentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css?ver=10.0" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function toggleFaq(id) {
+            document.getElementById(id).classList.toggle('hidden');
+            document.getElementById(id).classList.toggle('max-h-screen');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-purple-700 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="./index.html">
+                    <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                </a>
+                <span class="text-white text-2xl font-bold">Preguntas Frecuentes</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="./index.html" class="text-white hover:text-purple-300 transition">Inicio</a>
+                <a href="./mapa.html" class="text-white hover:text-purple-300 transition">Mapa</a>
+                <a href="./nosotros.html" class="text-white hover:text-purple-300 transition">Nosotros</a>
+                <a href="./contacto.html" class="text-white hover:text-purple-300 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-white" aria-label="Menu" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-purple-700">
+            <nav class="space-y-4 px-4 py-6">
+                <a href="./index.html" class="block text-white hover:text-purple-300 transition">Inicio</a>
+                <a href="./mapa.html" class="block text-white hover:text-purple-300 transition">Mapa</a>
+                <a href="./nosotros.html" class="block text-white hover:text-purple-300 transition">Nosotros</a>
+                <a href="./contacto.html" class="block text-white hover:text-purple-300 transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq1')">
+                <span class="text-xl font-semibold">¿Cómo puedo identificar la violencia psicológica?</span>
+            </button>
+            <div id="faq1" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Te sientes menospreciada por él.</li>
+                    <li>Sientes que ha afectado tu autoestima.</li>
+                    <li>Hace chistes o comentarios hirientes sobre ti.</li>
+                    <li>Has sido humillada a solas o frente a otras personas.</li>
+                    <li>Intenta restringir el contacto con cualquier miembro de tu familia o con tus amistades.</li>
+                    <li>Insiste en saber en dónde estás en todo momento.</li>
+                    <li>Limita, controla o inspecciona tus comunicaciones (teléfono, correo electrónico, redes
+                        sociales).</li>
+                    <li>Limita y controla tus decisiones, incluso sobre cómo vestirte.</li>
+                    <li>Presenta comportamientos celosos, posesivos o te acusa de serle infiel.</li>
+                    <li>Ha golpeado la pared, un mueble o roto un objeto para amedrentarte.</li>
+                    <li>Hace cosas para intimidarte, castigarte o hacerte sentir miedo.</li>
+                    <li>Te culpa por sus reacciones.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 (Nueva pregunta añadida) -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq2')">
+                <span class="text-xl font-semibold">¿Qué hacer si no avanza la investigación sobre violencia contra
+                    mí?</span>
+            </button>
+            <div id="faq2" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si la Fiscalía no avanza en la investigación, puedes presentar una solicitud escrita preguntando en
+                    qué va el proceso y radicar una copia en:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Defensoría del Pueblo</li>
+                    <li>Personería</li>
+                    <li>Consejo Superior de la Judicatura</li>
+                </ul>
+                <p>Para comunicarte con el centro de contacto de la Fiscalía General de la Nación:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Desde un teléfono fijo: <strong>01 8000 9197 48</strong></li>
+                    <li>Desde un celular: <strong>122</strong></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Pregunta 2 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq2')">
+                <span class="text-xl font-semibold">¿Qué puedo hacer si considero que hay negligencia en la Comisaría de
+                    Familia?</span>
+            </button>
+            <div id="faq2" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si detectas negligencia en la Comisaría de Familia, puedes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Comunicarte con la <strong>Procuraduría General de la Nación</strong> para interponer una queja
+                        disciplinaria.</li>
+                    <li>Acudir a la <strong>Defensoría del Pueblo</strong> y a la <strong>Personería</strong> para
+                        obtener apoyo y asesoría.</li>
+                </ul>
+                <p>Recuerda reunir pruebas que respalden tu queja.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq3')">
+                <span class="text-xl font-semibold">¿Qué hacer si la Fiscalía no recibe mi denuncia?</span>
+            </button>
+            <div id="faq3" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>En caso de que la Fiscalía no reciba tu denuncia verbal:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Presenta la denuncia por escrito.</li>
+                    <li>Presenta una queja si es necesario.</li>
+                    <li>Comunícate con el centro de contacto de la Fiscalía:</li>
+                    <ul class="list-disc pl-8">
+                        <li>Desde un teléfono fijo: <strong>01 8000 9197 48</strong></li>
+                        <li>Desde un celular: <strong>122</strong></li>
+                    </ul>
+                    <li>Solicita apoyo de la <strong>Defensoría del Pueblo</strong> o la <strong>Personería</strong>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq4')">
+                <span class="text-xl font-semibold">¿Qué hacer si mi pareja esconde mis documentos, los de mis hijos o
+                    mi dinero?</span>
+            </button>
+            <div id="faq4" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Esta acción es considerada violencia intrafamiliar. Puedes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Acudir a la <strong>Comisaría de Familia</strong>.</li>
+                    <li>Solicitar que se ordene al agresor la devolución inmediata de tus documentos, objetos o dinero.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq5')">
+                <span class="text-xl font-semibold">¿Qué hacer si mi pareja no me deja salir de la casa?</span>
+            </button>
+            <div id="faq5" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si el agresor te impide salir de la casa:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Comunícate con una de las líneas de emergencia para pedir ayuda.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Pregunta 6 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq6')">
+                <span class="text-xl font-semibold">¿A dónde debo acudir si necesito asesoría y representación
+                    jurídica?</span>
+            </button>
+            <div id="faq6" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si necesitas orientación y asesoría jurídica puedes acudir a:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Defensoría del Pueblo</strong></li>
+                    <li><strong>Personería</strong></li>
+                    <li>Consultorios jurídicos de universidades</li>
+                    <li>Entidades encargadas de la protección de los derechos de las mujeres en tu municipio o
+                        localidad, como las Secretarías de la Mujer</li>
+                </ul>
+                <p>Si necesitas representación jurídica y no puedes pagar a una abogada, puedes solicitar este servicio
+                    a la Defensoría del Pueblo.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq7')">
+                <span class="text-xl font-semibold">¿Cómo saber si mi vida está en riesgo?</span>
+            </button>
+            <div id="faq7" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Debes acudir a la <strong>Comisaría de Familia</strong> más cercana y solicitar que te suministren el
+                    test de valoración del riesgo de violencia mortal contra las mujeres. Esta prueba te ayudará a
+                    determinar el nivel de riesgo que corre tu vida.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq8')">
+                <span class="text-xl font-semibold">¿Qué debo hacer si mi vida está en riesgo?</span>
+            </button>
+            <div id="faq8" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Pide ayuda de inmediato, siguiendo alguna de las rutas de atención descritas en esta aplicación según
+                    el tipo de violencia que estés sufriendo y la ubicación donde te encuentres.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq9')">
+                <span class="text-xl font-semibold">¿Cuáles son las leyes que protegen los derechos de las
+                    mujeres?</span>
+            </button>
+            <div id="faq9" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Ley 51 de 1981:</strong> Aprueba la Convención sobre la Eliminación de Todas las Formas
+                        de Discriminación contra la Mujer (CEDAW).</li>
+                    <li><strong>Ley 248 de 1997:</strong> Aprueba la Convención Internacional para Prevenir, Sancionar y
+                        Erradicar la Violencia contra la Mujer (Belem Do Pará).</li>
+                    <li><strong>Ley 581 de 2000:</strong> Regula la participación de la mujer en niveles decisorios del
+                        poder público.</li>
+                    <li><strong>Ley 731 de 2002:</strong> Dicta normas para favorecer a las mujeres rurales.</li>
+                    <li><strong>Ley 823 de 2003:</strong> Establece normas sobre igualdad de oportunidades para las
+                        mujeres.</li>
+                    <li><strong>Ley 1257 de 2008:</strong> Normas de sensibilización, prevención y sanción contra la
+                        violencia y discriminación hacia las mujeres.</li>
+                    <li><strong>Ley 1761 de 2015:</strong> Crea el tipo penal de feminicidio como delito autónomo (Ley
+                        Rosa Elvira Cely).</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Pregunta 6 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq6')">
+                <span class="text-xl font-semibold">¿Cuánto tiempo tengo para interponer la denuncia por violencia
+                    intrafamiliar?</span>
+            </button>
+            <div id="faq6" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Tienes hasta cinco años para realizar la denuncia por violencia intrafamiliar. No obstante, si deseas
+                    solicitar una medida de protección ante la <strong>Comisaría de Familia</strong>, el hecho de
+                    violencia más reciente debe haber ocurrido hace menos de treinta días.</p>
+                <p>En caso de que el hecho haya ocurrido hace más de treinta días, debes hacer la denuncia directamente
+                    en la <strong>Fiscalía</strong> y solicitarle al fiscal que pida la medida de protección al juez.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq7')">
+                <span class="text-xl font-semibold">¿Qué pasa cuando la víctima es menor de edad?</span>
+            </button>
+            <div id="faq7" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si eres menor de edad y vas a denunciar, deben recibir la denuncia, y tu caso será remitido al
+                    <strong>ICBF</strong> para que el <strong>Defensor de Familia</strong> sea el encargado de brindarte
+                    protección.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq8')">
+                <span class="text-xl font-semibold">¿Qué documentos sirven para identificarse en el momento de denunciar
+                    la violencia de género?</span>
+            </button>
+            <div id="faq8" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Para las mujeres colombianas sirven:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>La cédula de ciudadanía.</li>
+                    <li>La constancia de documento en trámite.</li>
+                    <li>La contraseña.</li>
+                </ul>
+                <p>Para mujeres de otros países sirven:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>La cédula de extranjería o el pasaporte.</li>
+                    <li>El documento de identificación de su país de origen, especialmente en casos de emergencia.</li>
+                    <li>El Permiso Temporal de Permanencia (PTP) o el Permiso Especial de Permanencia (PEP) (solo para
+                        ciudadanos venezolanos).</li>
+                </ul>
+                <p>Es importante recordar que en salud no se puede negar la atención, incluso si la persona está
+                    indocumentada.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 9 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq9')">
+                <span class="text-xl font-semibold">¿Qué sucede si no me otorgan la medida de protección
+                    solicitada?</span>
+            </button>
+            <div id="faq9" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Si la medida de protección es negada, debes manifestar en la misma audiencia que deseas apelar la
+                    decisión.</p>
+                <p>Se te otorgará un plazo de hasta tres días hábiles para sustentar el recurso, en el cual es
+                    importante indicar las razones por las cuales consideras que el <strong>Comisario de
+                        Familia</strong> o el juez cometieron un error, por ejemplo, no haber tenido en cuenta una
+                    prueba o un testimonio.</p>
+            </div>
+        </div>
+        <!-- Pregunta 10 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq10')">
+                <span class="text-xl font-semibold">¿Qué sucede si en el lugar donde vivo no hay una Casa Refugio o
+                    lugar de acogida?</span>
+            </button>
+            <div id="faq10" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Debes acudir a la <strong>Comisaría de Familia</strong> para que, una vez hecha la valoración del
+                    riesgo en que te encuentras, remitan tu documentación a la <strong>EPS</strong>, la cual deberá
+                    garantizar servicios de transporte, alojamiento y alimentación para ti, tus hijas e hijos, y
+                    personas dependientes.</p>
+                <p>Estos servicios pueden otorgarse por un período máximo de seis meses, prorrogables según el nivel de
+                    riesgo.</p>
+               
+            </div>
+        </div>
+
+        <!-- Pregunta 11 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq11')">
+                <span class="text-xl font-semibold">¿Qué hacer si mis hijos o hijas presencian el acto de
+                    violencia?</span>
+            </button>
+            <div id="faq11" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>Incluirlos puede ayudarte a mantener alejado a tu agresor y evitar que te manipule con la custodia o
+                    la cuota alimentaria.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 12 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq12')">
+                <span class="text-xl font-semibold">¿Qué es Medicina Legal y cuáles son los trámites que se adelantan
+                    ahí?</span>
+            </button>
+            <div id="faq12" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p><strong>Medicina Legal</strong> presta servicios forenses, es decir, realiza exámenes que permiten
+                    acreditar daños físicos o psicológicos en una persona.</p>
+                <p>Para obtener una valoración, la mujer debe ser remitida por la <strong>Fiscalía</strong> o la
+                    <strong>Comisaría de Familia</strong>, quienes indicarán si el examen será físico, psiquiátrico o
+                    psicológico.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 13 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq13')">
+                <span class="text-xl font-semibold">¿Qué hacer cuando la víctima de violencia de género es una
+                    niña?</span>
+            </button>
+            <div id="faq13" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>El <strong>Defensor de Familia</strong>, a través del <strong>ICBF</strong>, inicia la ruta de
+                    atención y el restablecimiento de derechos.</p>
+                <p>Si no hay Defensor de Familia en la localidad, se debe acudir al <strong>Comisario de
+                        Familia</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 14 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq14')">
+                <span class="text-xl font-semibold">¿Qué hago si no tengo con qué pagar una abogada o abogado?</span>
+            </button>
+            <div id="faq14" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>El servicio de asesoría legal gratuita es prestado por la <strong>Defensoría del Pueblo</strong> o
+                    las <strong>Personerías</strong>.</p>
+                <p>En algunos casos, las <strong>Secretarías para la Mujer</strong>, como en Bogotá, también ofrecen
+                    este servicio.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 15 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq15')">
+                <span class="text-xl font-semibold">¿Qué hacer en el caso de sospechar que la violencia política
+                    proviene de un actor estatal?</span>
+            </button>
+            <div id="faq15" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>En ese caso, se recomienda acudir a <strong>organismos internacionales</strong> encargados de
+                    resolver este tipo de situaciones.</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 16 -->
+        <div class="border border-gray-300 rounded-lg mb-4">
+            <button
+                class="w-full text-left px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                onclick="toggleFaq('faq16')">
+                <span class="text-xl font-semibold">Línea de atención</span>
+            </button>
+            <div id="faq16" class="hidden overflow-hidden max-h-0 px-6 py-4 bg-white transition-all">
+                <p>En caso de emergencia, puedes llamar a la línea 123.</p>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Add more FAQ items following the same structure -->
+    </div>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()"
+        class="fixed bottom-5 right-5 bg-purple-700 text-white p-3 rounded-full shadow-lg hover:bg-purple-600 transition">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-purple-700 text-white text-center py-6 mt-8">
+        <p>© 2024 EVA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

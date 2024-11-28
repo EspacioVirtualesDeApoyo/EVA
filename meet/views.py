@@ -13,6 +13,9 @@ import calendar
 def calendario_home(request):
     return render(request, 'calendario.html')
 
+def reuniones(request):
+    return render(request, 'reuniones.html')
+
 @require_GET
 def fechas_encuentros(request):
     try:

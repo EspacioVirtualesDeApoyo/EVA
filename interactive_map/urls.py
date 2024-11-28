@@ -3,5 +3,5 @@ from . import views
 from .views import mapa_view
 
 urlpatterns = [
-    path("map/", mapa_view, name="map"),
+    path("", mapa_view, name="mapa"),
 ]

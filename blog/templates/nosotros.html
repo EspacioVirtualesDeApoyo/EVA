@@ -13,7 +13,7 @@
     <header class="bg-purple-700 shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <a href="./index.html">
+                <a href="{% url "inicio" %}">
                     <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
                 </a>
                 <span class="text-white text-2xl font-bold">Nosotros</span>
@@ -26,7 +26,7 @@
             </button>
             <!-- Menú de escritorio -->
             <nav class="hidden md:flex space-x-8">
-                <a href="./index.html" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="{% url "inicio" %}" class="text-white hover:text-purple-200 transition">Inicio</a>
                 <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
                 <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas frecuentes</a>
                 <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
@@ -35,7 +35,7 @@
         </div>
         <!-- Menú móvil -->
         <nav id="mobileMenu" class="hidden bg-purple-700 md:hidden">
-            <a href="./index.html" class="block text-white py-2 px-4 hover:bg-purple-600">Inicio</a>
+            <a href="{% url "inicio" %}" class="block text-white py-2 px-4 hover:bg-purple-600">Inicio</a>
             <a href="./mapa.html" class="block text-white py-2 px-4 hover:bg-purple-600">Mapa</a>
             <a href="./preguntas-frecuentes.html" class="block text-white py-2 px-4 hover:bg-purple-600">Preguntas frecuentes</a>
             <a href="./nosotros.html" class="block text-white py-2 px-4 hover:bg-purple-600">Nosotros</a>

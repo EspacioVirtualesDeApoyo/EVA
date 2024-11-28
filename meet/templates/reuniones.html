@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +14,15 @@
     <header class="bg-purple-700 shadow-lg">
         <div class="container mx-auto px-4 py-6 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <a href="./index.html">
-                    <img src="./imgs/Logo-EVA.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                <a href="{% url "inicio" %}">
+                    <img src="{% static 'img/Logo-EVA.jpg' %}" alt="Logo" class="h-12 w-12 rounded-full">
                 </a>
                 <span class="text-white text-2xl font-bold">Reuniones Sincrónicas</span>
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="./index.html" class="text-white hover:text-purple-200 transition">Inicio</a>
+                <a href="{% url "inicio" %}" class="text-white hover:text-purple-200 transition">Inicio</a>
                 <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
-                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas
+                <a href="{% url "preguntas_frecuentes" %}" class="text-white hover:text-purple-200 transition">Preguntas
                     frecuentes</a>
                 <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
                 <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>

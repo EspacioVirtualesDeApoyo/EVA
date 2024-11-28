@@ -21,11 +21,11 @@
             </div>
             <nav class="hidden md:flex space-x-8">
                 <a href="{% url "inicio" %}" class="text-white hover:text-purple-200 transition">Inicio</a>
-                <a href="./mapa.html" class="text-white hover:text-purple-200 transition">Mapa</a>
-                <a href="./preguntas-frecuentes.html" class="text-white hover:text-purple-200 transition">Preguntas
+                <a href="{% url "mapa" %}" class="text-white hover:text-purple-200 transition">Mapa</a>
+                <a href="{% url "preguntas_frecuentes" %}" class="text-white hover:text-purple-200 transition">Preguntas
                     frecuentes</a>
-                <a href="./nosotros.html" class="text-white hover:text-purple-200 transition">Nosotros</a>
-                <a href="./contacto.html" class="text-white hover:text-purple-200 transition">Contacto</a>
+                <a href="{% url "nosotros" %}" class="text-white hover:text-purple-200 transition">Nosotros</a>
+                <a href="{% url "contacto" %}" class="text-white hover:text-purple-200 transition">Contacto</a>
             </nav>
             <button class="md:hidden text-white" aria-label="Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,15 +194,15 @@
                     </div>
                 </div>
                 <div>
-                    <img src="./imgs/unete.png" width="500px" height="400px">
+                    <img src="{% static 'img/unete.png' %}" width="500px" height="400px">
                 </div>
             </div>
         </section>
 
         <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <a href="./reuniones.html">
+            <a href="{% url "reuniones" %}">
                 <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <img src="./imgs/reuniones.jpg" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="{% static 'img/reuniones.jpg' %}" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold text-purple-600 mb-2">Reuniones sincrónicas anónimas</h3>
                     <p class="text-gray-700">Únete a nustras reuniones sincónicas para tener un mejor conocimiento sobre
                         que hacer en un caso de violencia.</p>
@@ -210,7 +210,7 @@
             </a>
             <a href="./educacion.html">
                 <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <img src="./imgs/educacion.png" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="{% static 'img/educacion.png' %}" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold text-purple-600 mb-2">Educación</h3>
                     <p class="text-gray-700">Una sección para aprender sobre tipos de violencia, derechos y recursos
                         disponibles.
@@ -220,7 +220,7 @@
             </a>
             <a href="./sobre-la-app.html">
                 <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
-                    <img src="./imgs/movil.jpg" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <img src="{% static 'img/movil.jpg' %}" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold text-purple-600 mb-2">Recurso móvil</h3>
                     <p class="text-gray-700">Envía la ubicación de la persona a contactos de confianza.</p><br>
                 </div>
@@ -257,7 +257,7 @@
                     empoderamiento. Juntas, podemos superar obstáculos, generar cambios y crecer en un entorno donde la
                     empatía y el respeto son nuestra guía. Únete a esta comunidad y sé parte de una red que transforma
                     vidas y fomenta la sororidad.</p>
-                <a href="./comunidad.html"
+                <a href="{% url "comunidad" %}"
                     class="relative bg-purple-800 text-white font-bold py-2 px-4 rounded inline-block group hover:bg-purple-700 transition-all duration-300 ease-in-out hover:pl-6 hover:pr-10">
                     Ver más
                     <span

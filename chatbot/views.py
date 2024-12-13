@@ -21,65 +21,90 @@ def chatbot_response(request):
         # Lógica para respuestas predeterminadas con varias palabras clave para un solo resultado
         responses = {
             # Saludos
-            "buenos dias|buen dia|buenas tardes|buenas noches|hola|hola eva": "¿En qué puedo ayudarte?\nPor favor, indícame en qué puedo ayudarte.",
-            
-            # Información sobre contactos
-            "contactos": '1. Línea Púrpura Bogotá\n• Llamando al 018000112137\n• Escribiendo al WhatsApp 3007551846',
-            
-            # Violencia de género
-            "violencia": (
-                "La violencia de género puede adoptar muchas formas, incluyendo violencia física, emocional, psicológica, sexual y económica.\n\n"
-                "Es importante saber que la violencia no es tu culpa. Nadie merece vivir en una situación de violencia.\n\n"
-                "Si estás sufriendo violencia, puedes comunicarte con la Línea Púrpura llamando al 018000112137 o escribiendo al WhatsApp 3007551846.\n"
-                "También puedes buscar apoyo en un psicólogo o acudir a algún refugio seguro si es necesario."
+            "buenos dias|buen dia|buenas tardes|buenas noches|hola|hola eva": (
+                "Hola! En que puedo ayudarte hoy? "
             ),
-            
+
+            # Información sobre contactos
+            "contactos|contacto": (
+                "1. **Línea Púrpura Bogotá**\n"
+                "   • Teléfono: 018000112137\n"
+                "   • WhatsApp: 3007551846\n\n"
+                "2. **Línea 155**\n"
+                "   Disponible a nivel nacional, brinda orientación y apoyo a mujeres víctimas de violencia de género.\n\n"
+                "3. **Línea 123**\n"
+                "   Atención inmediata por la Policía Nacional."
+            ),
+
+            # Derechos de las mujeres
+            "derechos de las mujeres": (
+                'En Colombia, las mujeres tienen derecho a vivir una vida libre de violencia, a la igualdad y no discriminación,'
+                'conforme a lo estipulado en la Ley 1257 de 2008. Esta ley establece medidas de prevención, protección y sanción frente a la violencia de género.'
+            ),
+
+            # Violencia de género
+            "violencia|tipos de violencia": (
+                "La violencia de género puede manifestarse de varias formas, incluyendo:\n\n"
+                "1. **Violencia física**: golpes, empujones o lesiones.\n"
+                "2. **Violencia psicológica**: humillaciones, control excesivo o manipulación emocional.\n"
+                "3. **Violencia económica**: privación de recursos o control sobre tus ingresos.\n"
+                "4. **Violencia sexual**: actos sin tu consentimiento.\n\n"
+                "Recuerda que la Ley 1257 de 2008 te protege y que puedes buscar ayuda en las líneas de atención disponibles."
+            ),
+
+            # Guía para realizar una denuncia
+            "denunciar|denuncias|denuncia|demanda|demandas": (
+                "Si deseas realizar una denuncia por violencia de género, puedes acudir a:\n\n"
+                "1. **Fiscalía General de la Nación**: Presenta tu denuncia en cualquier URI o seccional.\n"
+                "2. **Comisarías de Familia**: Brindan protección inmediata y medidas de atención.\n"
+                "3. **Línea 155**: Recibirás orientación sobre cómo proceder.\n\n"
+                "Es importante presentar cualquier evidencia disponible, como mensajes, fotos o testimonios."
+            ),
+
             # Cómo identificar si eres víctima
             "como identificar violencia|señales de violencia|victima de violencia": (
-                "Algunas señales de que podrías estar sufriendo violencia de género incluyen:\n\n"
-                "1. **Violencia física**: golpes, empujones, quemaduras, lesiones.\n"
-                "2. **Violencia emocional y psicológica**: insultos, humillaciones, intimidación, control excesivo sobre tus decisiones.\n"
-                "3. **Violencia sexual**: presiones para tener relaciones sexuales sin tu consentimiento o abuso sexual.\n"
-                "4. **Violencia económica**: control sobre tu dinero, no dejarte trabajar, no permitirte decidir sobre tus gastos.\n\n"
-                "Si alguna de estas situaciones te resulta familiar, puede ser una señal de que necesitas ayuda. No estás sola y hay recursos para ti."
+                "Algunas señales de violencia incluyen:\n\n"
+                "- **Control excesivo**: Tu pareja limita tus decisiones o contactos.\n"
+                "- **Aislamiento**: Te aleja de tu familia o amigos.\n"
+                "- **Amenazas**: Te intimida con palabras o gestos.\n\n"
+                "Si identificas alguna de estas señales, busca apoyo. Puedes llamar a la Línea Púrpura o acudir a una comisaría de familia."
             ),
-            
+
             # Palabras de motivación
             "motivar|palabras de apoyo|estoy sufriendo|me siento triste|me siento sola|me siento mal": (
-                "Lamento mucho que estés pasando por esto. Quiero que sepas que eres muy valiente por estar buscando ayuda y que mereces vivir una vida sin violencia. "
-                "Recuerda que nadie tiene derecho a controlarte, humillarte o hacerte daño. Hay un futuro mejor para ti, lleno de paz y seguridad. "
-                "Si necesitas hablar con alguien, no dudes en contactarme o buscar apoyo profesional. El primer paso hacia la sanación es hablar sobre lo que estás viviendo."
+                "Siento mucho lo que estás viviendo. Recuerda que eres fuerte y mereces vivir en un entorno seguro. \n"
+                "Buscar ayuda es un acto valiente. Puedes contar con los recursos disponibles en Colombia, como la Línea Púrpura o la Línea 155."
             ),
-            
+
             # Recursos de apoyo
             "recursos de apoyo|ayuda emocional|apoyo psicológico": (
-                "Existen muchas formas de obtener ayuda. Además de la Línea Púrpura, puedes buscar un psicólogo o terapeuta especializado en violencia de género. "
-                "También puedes asistir a grupos de apoyo o acudir a tu centro de salud más cercano para obtener orientación. "
-                "Nunca dudes en buscar ayuda. La violencia de género no debe ser tolerada, y mereces vivir en un ambiente seguro y saludable."
+                "Existen múltiples recursos en Colombia para apoyarte:\n\n"
+                "1. **Línea Púrpura**: Orientación especializada para mujeres víctimas de violencia.\n"
+                "2. **Grupos de apoyo**: Busca en tu comunidad o instituciones como las Casas de la Mujer.\n"
+                "3. **Atención en salud**: Acude a tu EPS o centro de salud más cercano para obtener ayuda psicológica."
             ),
-            
+
             # Estrategias de protección
             "estrategias de proteccion|como protegerme|siento miedo": (
-                "Si estás en una situación donde sientes que estás en peligro, tu seguridad es lo más importante. Algunas estrategias incluyen:\n\n"
-                "1. **Tener un plan de emergencia**: Si sientes que hay una amenaza inmediata, trata de tener a mano tu teléfono y el contacto de una persona de confianza a la que puedas avisar.\n"
-                "2. **Busca un lugar seguro**: Si es posible, sal de la situación y dirígete a un lugar seguro (casa de un amigo, familiar o refugio).\n"
-                "3. **Llamada de emergencia**: Si estás en peligro, no dudes en llamar a la policía o utilizar la Línea Púrpura.\n\n"
-                "Es importante que busques apoyo de profesionales que puedan ayudarte a planificar tu seguridad a largo plazo."
+                "Si estás en peligro, toma medidas para protegerte:\n\n"
+                "1. **Plan de emergencia**: Identifica un lugar seguro y contactos de confianza.\n"
+                "2. **Documentación**: Mantén tus documentos y objetos esenciales a mano.\n"
+                "3. **Llamadas de emergencia**: Marca la Línea 123 o busca apoyo en una comisaría de familia.\n\n"
+                "Tu seguridad es prioritaria."
             ),
-            
+
             # Apoyo emocional y cómo salir de la situación
             "salir de la violencia|terminar la relación|escapar de la violencia": (
-                "Salir de una situación de violencia de género es difícil, pero es posible. El primer paso es reconocer que mereces estar en una relación sana y sin miedo. "
-                "Es importante contar con el apoyo de personas de confianza y, si es posible, buscar ayuda profesional para guiarte a través de este proceso. "
-                "Recuerda que tienes derecho a una vida sin violencia, y el camino hacia la recuperación es posible. Si te sientes insegura o no sabes cómo dar el siguiente paso, "
-                "hay muchos recursos disponibles para guiarte y protegerte."
+                "Salir de una situación de violencia es un proceso difícil pero posible.\n"
+                "1. **Busca apoyo**: Habla con alguien de confianza.\n"
+                "2. **Contacta profesionales**: Acude a comisarías de familia o terapeutas especializados.\n"
+                "3. **Crea un plan de acción**: Define cómo garantizar tu seguridad y bienestar."
             ),
-            
+
             # Respuesta cuando se agradece la ayuda
-            "gracias": "¡De nada! Si necesitas algo más, no dudes en preguntar.\n• ¡Estoy aquí para ayudarte en cualquier momento!",
-            
-            # Cierre de conversación
-            "fin": "Gracias por hablar conmigo. No olvides que siempre puedes buscar apoyo cuando lo necesites. ¡Cuídate mucho!"
+            "gracias": (
+                "¡De nada! Estoy aquí para ayudarte. Si necesitas más información o apoyo, no dudes en preguntar."
+            )
         }
 
         # Recorre todas las claves y devuelve la respuesta correspondiente
@@ -89,6 +114,7 @@ def chatbot_response(request):
             for palabra_clave in claves:
                 if palabra_clave in mensaje_normalizado:
                     return JsonResponse({"response": respuesta})
+                
 
         # Respuesta por defecto si no se encuentra ninguna palabra clave
         return JsonResponse({"response": "Lo siento, no te entiendo. ¿Puedes repetir tu pregunta?"})

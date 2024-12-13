@@ -22,6 +22,6 @@ env/
 *.pot
 *.mo
 
-# Archivos temporales del sistema
+# Archivos temporales del sistema dj
 .DS_Store
 Thumbs.db
